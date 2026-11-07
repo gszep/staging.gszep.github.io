@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Living Cells</title>
+    <link rel="icon" href="data:," />
+    <style>
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #d3dfdb;
+        font: 14px system-ui;
+        color: #34473b;
+      }
+      canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+      }
+      header {
+        z-index: 10;
+        position: fixed;
+        left: 18px;
+        top: 18px;
+        pointer-events: none;
+      }
+      header strong {
+        font-size: 20px;
+        display: block;
+      }
+      header small {
+        opacity: 0.7;
+      }
+      nav {
+        z-index: 10;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+      }
+      button {
+        padding: 10px 15px;
+        min-height: 44px;
+        border: 1px solid #61765e33;
+        border-radius: 24px;
+        color: #34473b;
+        background: #f3f6ece6;
+        font: inherit;
+        cursor: pointer;
+      }
+      #status {
+        z-index: 20;
+        position: fixed;
+        left: 10%;
+        right: 10%;
+        top: 42%;
+        padding: 12px;
+        background: #f3f6ecee;
+        border-radius: 12px;
+        overflow: auto;
+        max-height: 30vh;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      details {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 10;
+        max-width: min(270px, 70vw);
+      }
+      summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 24px;
+        background: #f3f6ece6;
+        border: 1px solid #61765e33;
+      }
+      details[open] {
+        padding: 12px;
+        background: #f3f6ecf5;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px #34473b22;
+      }
+      details p {
+        line-height: 1.5;
+      }
+      details a {
+        color: inherit;
+      }
+    </style>
+  <script defer src="runtime.bundle.js?6b8b31e4ffdc0e661b42"></script><script defer src="colony.bundle.js?6b8b31e4ffdc0e661b42"></script></head>
+  <body>
+    <header><strong>Living cells</strong><small>10 cells · drag to steer</small></header>
+    <details>
+      <summary>Settings</summary>
+      <p>Ten interacting cells with a shared particle budget. Drag to guide the group.</p>
+      <p>Each cell has its own actin pool and membrane. The green tint is an illustrative density texture.</p>
+      <p><a href="single.html?demo=1">Single-cell view and diagnostics</a></p>
+      <p id="stats"></p>
+    </details>
+    <p id="status">Preparing ten cells…</p>
+    <nav><button id="pause">Pause</button><button id="restart">Restart</button></nav>
+  </body>
+</html>
